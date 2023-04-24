@@ -1,0 +1,94 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hat-air-batch-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hat-be-air-batch
+  template:
+    metadata:
+      labels:
+        app: hat-be-air-batch
+    spec:
+      containers:
+        - name: air-quality-app-batch
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-batch:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9001
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hat-air-external-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hat-be-air-external
+  template:
+    metadata:
+      labels:
+        app: hat-be-air-external
+    spec:
+      containers:
+        - name: air-quality-app-external-api
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-external-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9000
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hat-community-external-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hat-be-community-external
+  template:
+    metadata:
+      labels:
+        app: hat-be-community-external
+    spec:
+      containers:
+        - name: community-app-external-api
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/community-app-external-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 10000
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hat-member-external-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hat-be-member-external
+  template:
+    metadata:
+      labels:
+        app: hat-be-member-external
+    spec:
+      containers:
+        - name: member-app-external-api
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/member-app-external-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 11000
