@@ -1,0 +1,35 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hat-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'  # HTTPS listen-ports 부분 삭제
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /api/v1/airquality
+            pathType: Prefix
+            backend:
+              service:
+                name: hat-air-external-svc
+                port:
+                  number: 80
+          - path: /api/v1/post
+            pathType: Prefix
+            backend:
+              service:
+                name: hat-community-external-svc
+                port:
+                  number: 80
+          - path: /api/v1/auth
+            pathType: Prefix
+            backend:
+              service:
+                name: hat-member-external-svc
+                port:
+                  number: 80
