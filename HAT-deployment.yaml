@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: air-quality-app-batch
-          image: ${AWS_ID}.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-batch:latest
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-batch:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: air-quality-app-external-api
-          image: ${AWS_ID}.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-external-api:latest
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-external-api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
@@ -65,7 +65,7 @@ spec:
     spec:
       containers:
         - name: community-app-external-api
-          image: ${AWS_ID}.dkr.ecr.ap-northeast-2.amazonaws.com/community-app-external-api:latest
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/community-app-external-api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 10000
@@ -89,7 +89,7 @@ spec:
     spec:
       containers:
         - name: member-app-external-api
-          image: ${AWS_ID}.dkr.ecr.ap-northeast-2.amazonaws.com/member-app-external-api:latest
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/member-app-external-api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 11000
