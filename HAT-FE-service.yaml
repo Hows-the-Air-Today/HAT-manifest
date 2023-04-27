@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hat-fe-svc
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: "/api/v1"
+spec:
+  selector:
+    app: hat-fe-svc
+  type: NodePort
+  ports:
+    - name: hat-fe-port
+      port: 80 # 서비스가 생성할 포트
+      targetPort: 3000 # 서비스가 접근할 pod의 포트
+      protocol: TCP
