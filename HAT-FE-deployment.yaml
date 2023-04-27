@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hat-fe-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hat-fe-svc
+  template:
+    metadata:
+      labels:
+        app: hat-fe-svc
+    spec:
+      containers:
+        - name: hat-fe
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/hat-fe:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
