@@ -8,6 +8,12 @@ spec:
   selector:
     matchLabels:
       app: hat-fe-svc
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  minReadySeconds: 5
   template:
     metadata:
       labels:
