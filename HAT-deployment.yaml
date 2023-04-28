@@ -2,12 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hat-air-batch-deploy
-  namespace: default
+  labels:
+    app: hat-be-air-batch
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: hat-be-air-batch
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  minReadySeconds: 5
   template:
     metadata:
       labels:
@@ -15,7 +22,7 @@ spec:
     spec:
       containers:
         - name: air-quality-app-batch
-          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-batch:184
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-batch:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
@@ -26,12 +33,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hat-air-external-deploy
-  namespace: default
+  labels:
+    app: hat-be-air-external
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: hat-be-air-external
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  minReadySeconds: 5
   template:
     metadata:
       labels:
@@ -39,7 +53,7 @@ spec:
     spec:
       containers:
         - name: air-quality-app-external-api
-          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-external-api:184
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/air-quality-app-external-api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
@@ -50,12 +64,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hat-community-external-deploy
-  namespace: default
+  labels:
+    app: hat-be-community-external
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: hat-be-community-external
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  minReadySeconds: 5
   template:
     metadata:
       labels:
@@ -63,7 +84,7 @@ spec:
     spec:
       containers:
         - name: community-app-external-api
-          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/community-app-external-api:184
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/community-app-external-api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 10000
@@ -74,12 +95,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hat-member-external-deploy
-  namespace: default
+  labels:
+        app: hat-be-member-external
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: hat-be-member-external
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  minReadySeconds: 5
   template:
     metadata:
       labels:
@@ -87,7 +115,8 @@ spec:
     spec:
       containers:
         - name: member-app-external-api
-          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/member-app-external-api:184
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/member-app-external-api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 11000
+EOF
