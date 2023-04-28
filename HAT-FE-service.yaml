@@ -11,5 +11,5 @@ spec:
   ports:
     - name: hat-fe-port
       port: 80 # 서비스가 생성할 포트
-      targetPort: 3000 # 서비스가 접근할 pod의 포트
+      targetPort: 80 # 서비스가 접근할 pod의 포트
       protocol: TCP
