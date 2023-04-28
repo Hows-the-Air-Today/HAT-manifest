@@ -2,8 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hat-fe-deploy
-  labels:
-    app: hat-fe-svc
+  namespace: default
 spec:
   replicas: 3
   selector:
