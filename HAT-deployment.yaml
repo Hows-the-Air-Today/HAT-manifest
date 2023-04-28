@@ -119,4 +119,3 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 11000
-EOF
