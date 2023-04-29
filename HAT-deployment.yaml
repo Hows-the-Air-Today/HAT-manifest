@@ -26,13 +26,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
-          resources:
-            limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
-              cpu: "0.2"
-              memory: "128Mi"
 
 ---
 
@@ -64,13 +57,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
-          resources:
-            limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
-              cpu: "0.2"
-              memory: "128Mi"
 
 ---
 
@@ -102,13 +88,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 10000
-          resources:
-            limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
-              cpu: "0.2"
-              memory: "128Mi"
 
 ---
 
@@ -140,10 +119,3 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 11000
-          resources:
-            limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
-              cpu: "0.2"
-              memory: "128Mi"
