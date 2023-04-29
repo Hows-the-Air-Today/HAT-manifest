@@ -28,11 +28,11 @@ spec:
             - containerPort: 9001
           resources:
             limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
               cpu: "0.2"
               memory: "128Mi"
+            requests:
+              cpu: "0.1"
+              memory: "64Mi"
 
 ---
 
@@ -66,11 +66,11 @@ spec:
             - containerPort: 9000
           resources:
             limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
               cpu: "0.2"
               memory: "128Mi"
+            requests:
+              cpu: "0.1"
+              memory: "64Mi"
 
 ---
 
@@ -104,11 +104,11 @@ spec:
             - containerPort: 10000
           resources:
             limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
               cpu: "0.2"
               memory: "128Mi"
+            requests:
+              cpu: "0.1"
+              memory: "64Mi"
 
 ---
 
@@ -142,8 +142,8 @@ spec:
             - containerPort: 11000
           resources:
             limits:
-              cpu: "0.3"
-              memory: "256Mi"
-            requests:
               cpu: "0.2"
               memory: "128Mi"
+            requests:
+              cpu: "0.1"
+              memory: "64Mi"
