@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hat-be-air-batch
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hat-be-air-batch
