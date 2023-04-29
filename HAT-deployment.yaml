@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hat-be-air-batch
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hat-be-air-batch
@@ -26,6 +26,13 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
+          resources:
+            limits:
+              cpu: "0.3"
+              memory: "256Mi"
+            requests:
+              cpu: "0.2"
+              memory: "128Mi"
 
 ---
 
@@ -36,7 +43,7 @@ metadata:
   labels:
     app: hat-be-air-external
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hat-be-air-external
@@ -57,6 +64,13 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
+          resources:
+            limits:
+              cpu: "0.3"
+              memory: "256Mi"
+            requests:
+              cpu: "0.2"
+              memory: "128Mi"
 
 ---
 
@@ -67,7 +81,7 @@ metadata:
   labels:
     app: hat-be-community-external
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hat-be-community-external
@@ -88,6 +102,13 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 10000
+          resources:
+            limits:
+              cpu: "0.3"
+              memory: "256Mi"
+            requests:
+              cpu: "0.2"
+              memory: "128Mi"
 
 ---
 
@@ -98,7 +119,7 @@ metadata:
   labels:
         app: hat-be-member-external
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hat-be-member-external
@@ -119,3 +140,10 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 11000
+          resources:
+            limits:
+              cpu: "0.3"
+              memory: "256Mi"
+            requests:
+              cpu: "0.2"
+              memory: "128Mi"
