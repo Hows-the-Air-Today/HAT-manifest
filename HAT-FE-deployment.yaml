@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: hat-fe
-          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/hat-fe:25
+          image: 915947332145.dkr.ecr.ap-northeast-2.amazonaws.com/hat-fe:26
           imagePullPolicy: Always
           ports:
             - containerPort: 80
