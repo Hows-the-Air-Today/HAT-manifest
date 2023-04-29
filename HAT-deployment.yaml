@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hat-be-air-batch
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hat-be-air-batch
@@ -36,7 +36,7 @@ metadata:
   labels:
     app: hat-be-air-external
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hat-be-air-external
@@ -67,7 +67,7 @@ metadata:
   labels:
     app: hat-be-community-external
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hat-be-community-external
@@ -98,7 +98,7 @@ metadata:
   labels:
         app: hat-be-member-external
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hat-be-member-external
